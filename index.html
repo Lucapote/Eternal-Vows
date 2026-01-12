@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Wedding Media Single Page Website</title>
+    <meta content="Timeless wedding photography and videography capturing your eternal moments." name="description" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lato:wght@300;400;700&amp;family=Great+Vibes&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#056b69", // Deep Teal
+                        secondary: "#c1e1de", // Light Mint
+                        gold: "#C5A065", // Accent Gold for text/borders
+                        "background-light": "#FAFAFA",
+                        "background-dark": "#1a1a1a",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#262626",
+                    },
+                    fontFamily: {
+                        serif: ["'Playfair Display'", "serif"],
+                        sans: ["'Lato'", "sans-serif"],
+                        script: ["'Great Vibes'", "cursive"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #2d2d2d;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #056b69;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #045250;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-sans transition-colors duration-300">
+    <nav
+        class="fixed w-full z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a class="text-2xl font-serif font-bold text-primary tracking-widest uppercase" href="#">Gold Dust</a>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a class="text-sm uppercase tracking-wider hover:text-primary transition-colors" href="#home">Home</a>
+                <a class="text-sm uppercase tracking-wider hover:text-primary transition-colors" href="#about">About</a>
+                <a class="text-sm uppercase tracking-wider hover:text-primary transition-colors"
+                    href="#portfolio">Portfolio</a>
+                <a class="text-sm uppercase tracking-wider hover:text-primary transition-colors" href="#faq">FAQ</a>
+                <a class="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 text-sm uppercase tracking-wider rounded"
+                    href="#contact">Contact</a>
+            </div>
+            <button class="md:hidden text-gray-600 dark:text-gray-300">
+                <span class="material-icons-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+    <section class="relative h-screen flex items-center justify-center overflow-hidden" id="home">
+        <div class="absolute inset-0 z-0">
+            <img alt="Cinematic wedding couple walking in forest" class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6A6bvTeWk_-EKN0gL1eTHffD9OKd-FWEZ5NXu7fib4iyWCfAlY5QlVi7P7dZZUrLDezYrueKP2adg_gVU_MTSFF3SRWc7NlVGwuWDVXBKzPLuK7tkAI03mmqXF41BZYVCtDtyJ7-AyehWu5ZkUgMEU2YTVrbOxpi0CM2iMau309sheTQ8b7pNiUGlajIIDpVPaHcIaQM30DdgjNwfNK7zRPuQk_YUHlma4xpHP-cocEQRaVbys4txyMmLL37S3WmV2nv8gzYJ2HR_" />
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto mt-16">
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+                Reliable &amp; Professional<br />
+                <span class="font-light italic text-4xl md:text-6xl block mt-2">Wedding Photography &amp;
+                    Videography</span>
+            </h1>
+            <p class="text-lg md:text-xl font-light mb-10 text-gray-200 max-w-2xl mx-auto">
+                Capturing your love story in stunning photos &amp; 4k films, anywhere your heart takes you.
+            </p>
+            <a class="inline-block px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-300 uppercase tracking-widest text-sm rounded"
+                href="#contact">
+                Learn More
+            </a>
+        </div>
+    </section>
+    <section class="py-20 md:py-28 bg-secondary relative" id="about">
+        <div class="container mx-auto px-6 text-center">
+            <div class="relative inline-block mb-12">
+                <h2 class="font-script text-5xl md:text-7xl text-primary mb-2 relative z-10">Timeless <span
+                        class="text-gray-800 dark:text-gray-200 font-serif text-4xl md:text-5xl not-italic ml-2">Wedding
+                        Photography &amp; Video</span></h2>
+            </div>
+            <p class="max-w-3xl mx-auto text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+                Gold Dust Wedding Studio is a <strong class="text-primary font-semibold">Buckinghamshire based wedding
+                    videography and photography team</strong>, specialising in <strong
+                    class="text-primary font-semibold">luxury wedding films</strong> and photography <strong
+                    class="text-primary font-semibold">across UK and whole Europe</strong>. With a documentary approach,
+                we capture your day naturally—preserving genuine emotions, elegant details, and timeless moments. <a
+                    class="text-gold underline hover:text-primary transition-colors" href="#">Contact us</a> today to
+                learn more.
+            </p>
+        </div>
+    </section>
+    <section class="py-20 bg-background-light dark:bg-background-dark">
+        <div class="container mx-auto px-6">
+            <h3 class="text-center font-script text-5xl md:text-6xl mb-16 text-gray-800 dark:text-gray-100">Weddings
+                That Show Your Personalities</h3>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded shadow-lg aspect-video bg-gray-900">
+                        <img alt="Wedding couple ice skating"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3NWnViUaNznKElvUFfmk51e-snNzZ5SZuowzroeGYjMHHGn3JDLU3aBHfmToH56k7s-r6bZ-uB5Xp0uGkO4hEHdSUyOmsJ8LusripnFRf_v6gOFDIyaJkZ8tVKbiqdZERD9eYASRKn_jnARZUnKPLKIjMERA5S20I5hOhcGCyJQnjM_ik2gAW61KNZPwL2EFAtFYI9XJ1HIztCtHe5FaNNG9LCF7RlkILXmPydgp7q-flg4FEXDneg4QuGynbzylvEP_flDQoBI8d" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
+                                <span class="material-icons-outlined text-white text-3xl ml-1">play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="mt-6 font-serif text-2xl text-gray-800 dark:text-white">Edita and Gavin wedding in
+                        Chateau de doux</h4>
+                    <p class="mt-3 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Gavin proposed to Edita while ice skating beneath the Christmas lights at Rockefeller Center in
+                        New York. Their wedding in France felt like it was cut straight from a movie. Watch the video.
+                    </p>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded shadow-lg aspect-video bg-gray-900">
+                        <img alt="Wedding couple in France"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9gm5X2rF1xt6aJ4BnX_CgwxGVqCyJDFC4Iyn_6FVJgS5JyllZSKUPwyLmv4pOg0xwVYRK4bw09USwfanMmju0uY6szxydCvJZs66XxkQ-Bghpo1gviAIxGSkaC39SAPqoahIzlVPbcFH1KjfVJEbP8ZuvBfO5LRzavVHHh6Q_N1g7f4YhXdgDaMXFxpaXDhbQi2QX1X-65To0yYQYnGd7KQCzzTuKVkytSp3URbJy9ltqS0cYRX-n1GaC1yAM1cbUADPRh2e1YOZ-" />
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div
+                                class="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
+                                <span class="material-icons-outlined text-white text-3xl ml-1">play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="mt-6 font-serif text-2xl text-gray-800 dark:text-white">Aubree and Anthony wedding in
+                        Pesmes France</h4>
+                    <p class="mt-3 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Aubree &amp; Anthony traveled from the USA to Pesmes, France to exchange vows. Their wedding is
+                        raw, honest, funny, and deeply moving—an unforgettable celebration of love. Watch their story
+                        unfold.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 overflow-hidden bg-surface-light dark:bg-surface-dark">
+        <div class="container mx-auto px-6 relative">
+            <div class="flex items-center justify-center">
+                <button
+                    class="absolute left-4 md:left-10 z-10 w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition-colors shadow-md">
+                    <span class="material-icons-outlined text-sm">arrow_back_ios</span>
+                </button>
+                <div class="w-full max-w-md md:max-w-4xl mx-auto">
+                    <div class="relative aspect-[3/4] md:aspect-[16/9] overflow-hidden rounded-lg shadow-xl">
+                        <img alt="Bride and groom black and white walking" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgDGX_LDiVFk2CvKyBrnLz-QDkVoPSR9JUfjt4czAa296lxzNhvJaeBU7ucH0Yt7VhZraf8kKQOICtA0rxX3YkVDaMXZp75Q8tUbbed6qwX2eW--wdPH_f_zYZVs-u-odpggiJ5YIPaT5f3ORtuWx4OpyAZzNvvqYIhUdJUeHzJyNxDh4NpDMf96MoDXRy0Cga6QWlZoD5G40ZLXpGU7JryjMgYZFl2mIjp315yebA0jmJYFufNWxZdNBrvpuaCguSi3HTZktGdjDV" />
+                        <div class="absolute bottom-6 left-6 text-white z-10">
+                            <div
+                                class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-2 hover:bg-primary cursor-pointer transition-colors">
+                                <span class="material-icons-outlined">play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="absolute right-4 md:right-10 z-10 w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center hover:bg-primary hover:text-white transition-colors shadow-md">
+                    <span class="material-icons-outlined text-sm">arrow_forward_ios</span>
+                </button>
+            </div>
+            <div class="flex justify-center mt-8 space-x-2">
+                <div class="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                <div class="w-2 h-2 rounded-full bg-primary"></div>
+                <div class="w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+            </div>
+            <div class="text-center mt-12">
+                <a class="text-sm uppercase tracking-widest text-gray-500 dark:text-gray-400 hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1"
+                    href="#">View Our Wedding Photography Galleries</a>
+            </div>
+        </div>
+    </section>
+    <section class="py-10 bg-background-light dark:bg-background-dark" id="portfolio">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="group relative overflow-hidden rounded h-64 md:h-96">
+                    <img alt="Couple walking"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpM3Y186Q2tczcXRm9M7okY1m0I8cderwtI_KTUpNTnvn4WmdRXLinQOA_LTs0rF87vnPF7hQot-BZynuiM_XXln7Zu9yJxWvoGtt0dFKWgmpv1Yyhv9meZsXT-S6MKlgeymV5I67JobEnnMMUm1laFLsU5l1OLnWSAGYiYA7y-0G5QiGwmp2-k_J5aQvHw0ghkGFQuRLhA-K0dqpQclNbH15Kqm_geHrVYCVSI6kyu6GzoPMfhLn3QeF4seSxGcTxdPZ9TfjFzqsp" />
+                    <div
+                        class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded h-64 md:h-96">
+                    <img alt="Couple dancing with fireworks"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKHbgEfv-spx78eaIUhramdWPkG1KOaKgWh_2IicTr5as78KHbPv2UU2ACQ_LXz7PjGGxTtjTOAmgSxpiAUqOIryBtIRo-MWqXbvPejjcE1D-nEe441usFDXBdlI6Jqx0kJg1yCVDq5T87xrVnlDfBKpTPMNs1XMdFAnXVOIikHJxysgZWGjaN0OjST0IVoXAZUWa2yi9gJuGa03ZQSrfBzrC96l9xv_aXCcro6g03OgG5ZSbYwVBhOdrMdG0e6LzqC0J1l6JVtVDp" />
+                    <div
+                        class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded h-64 md:h-96">
+                    <img alt="Couple celebrating in field"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyu8esxLuzJCw9vhYgqn_N2jaA7zgAbT7PWVzcahYyspKXv_URibKmhNVVhKqK5F4y6zyuLAOZ7B37t-w8ApgK5cFnSFc2He9sOb0GHSQcxn_B2AazR40RzVRs-N9MkFwRkYuc-5amaIqAL8bMr_pYXySWOSD8c-rsf4x3fGY0AlqaV9WM9dU_3c7rJd4QrXPJq-GU4n7d_DpW00AUSesutBD5FEh8QmJnEWRbVjDp9jurMYc_YdJQd8Tasc2dzHJEv14vlXFUZjS1" />
+                    <div
+                        class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded h-64 md:h-96">
+                    <img alt="Couple in historic room"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgsr2i0tGw4uZeQRWbXXS7_4t6BoEWxLaxgcSr4cmxXz-ZQMO2AbNPAf5lYq-x9lgsgI16dqJnZ21vF4H-voKuYDMNhBeBgd3s_rOFXtOW3TRaoaNEMkQsLLdeaqiso-9qpVl98Cw_JgcF4ZnKfOXekEzdhy2IWbtCEv0wUj47WuGdei49qibld-QbLngMJTgaaTIjpPqrV-p-U_0EzkYMrKO13m9fHPT9-LBAwDjVnWqcn9nZ2h9mYFVSq1_vOZ8klDw4N00eBRYK" />
+                    <div
+                        class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-surface-light dark:bg-surface-dark">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="font-script text-5xl md:text-6xl mb-12 text-gray-800 dark:text-gray-100">But Don't Just Take Our
+                Word for It</h3>
+            <div
+                class="max-w-4xl mx-auto bg-background-light dark:bg-background-dark p-10 md:p-14 rounded-sm shadow-sm relative">
+                <span
+                    class="absolute top-6 left-6 text-6xl text-gray-200 dark:text-gray-700 font-serif leading-none">"</span>
+                <p class="text-gray-600 dark:text-gray-300 italic text-lg leading-relaxed mb-8 relative z-10">
+                    Gold dust wedding studio has created a lasting memory of our wedding. Many shots are an art piece
+                    quality worth a high resolution print. I love the his pricing packages on offer that everything is
+                    included. I haven't found anyone else with such a good deal. I am grateful for choosing him and I
+                    would do so again.
+                </p>
+                <div class="flex items-center justify-center mt-8 space-x-4">
+                    <button
+                        class="w-8 h-8 flex items-center justify-center text-gold hover:text-primary transition-colors">
+                        <span class="material-icons-outlined text-sm">arrow_back_ios</span>
+                    </button>
+                    <div class="flex items-center space-x-3">
+                        <img alt="Anastasia"
+                            class="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-gray-600 shadow-md"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHwyWCu_iFKFMDmCOZQBoJ6CT-6dXdz87q10eb-0hKv4jFV9boA6iF5aewoqnFAetuPDSufE85iJiT_0fVUkwj2m_c1ubp3fTv2GS3PwUJT4A_FCzusAZTrmk7IUtBc2_sItANK7JX6Iw7EoYFvvnmnlVepLCiIzzggl783FfYyPQbFC_L_3qgZShwG-YM5rLz2T1qo1MSCIip9LK7x5YG7vxGg93XHGcgrxAORkKCv9D3NHMCCLibUHMC3Ru4EQLTDVUU_1ESkhGn" />
+                        <div class="text-left">
+                            <h5 class="font-bold text-sm text-gray-900 dark:text-white">Anastasia &amp; Antonin</h5>
+                            <span class="text-xs text-gray-500 uppercase tracking-wide">Married in 2023</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-8 h-8 flex items-center justify-center text-gold hover:text-primary transition-colors">
+                        <span class="material-icons-outlined text-sm">arrow_forward_ios</span>
+                    </button>
+                </div>
+                <div class="flex justify-center mt-8 space-x-2">
+                    <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                    <div class="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-background-light dark:bg-background-dark" id="faq">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h3 class="text-center font-script text-5xl md:text-6xl mb-6 text-gray-800 dark:text-gray-100">Frequently
+                Asked Questions</h3>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12 text-sm md:text-base max-w-2xl mx-auto">
+                Planning a wedding can come with plenty of decisions, big and small. To help you feel confident and
+                informed, we've put together answers to some of the most common questions couples ask us.
+            </p>
+            <div class="space-y-4">
+                <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+                    <button class="w-full flex justify-between items-center text-left focus:outline-none py-2 group">
+                        <span
+                            class="text-gray-800 dark:text-gray-200 font-medium group-hover:text-primary transition-colors">We're
+                            awkward in front of the camera — will that be a problem?</span>
+                        <span class="material-icons-outlined text-primary">remove</span>
+                    </button>
+                    <div
+                        class="mt-2 p-6 bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-700 rounded-md shadow-sm">
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                            Not at all. Most couples feel that way at first. That's why I spend time getting to know you
+                            before the day, so it doesn't feel like a stranger is pointing a camera at you. My goal is
+                            to make you feel comfortable, safe, and free to just be yourselves.
+                        </p>
+                    </div>
+                </div>
+                <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+                    <button class="w-full flex justify-between items-center text-left focus:outline-none py-2 group">
+                        <span
+                            class="text-gray-800 dark:text-gray-200 font-medium group-hover:text-primary transition-colors">We're
+                            not sure about hiring a videographer. How do we know if it's worth it?</span>
+                        <span class="material-icons-outlined text-gray-400 group-hover:text-primary">add</span>
+                    </button>
+                </div>
+                <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+                    <button class="w-full flex justify-between items-center text-left focus:outline-none py-2 group">
+                        <span
+                            class="text-gray-800 dark:text-gray-200 font-medium group-hover:text-primary transition-colors">What
+                            is your approach towards making a wedding film?</span>
+                        <span class="material-icons-outlined text-gray-400 group-hover:text-primary">add</span>
+                    </button>
+                </div>
+                <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+                    <button class="w-full flex justify-between items-center text-left focus:outline-none py-2 group">
+                        <span
+                            class="text-gray-800 dark:text-gray-200 font-medium group-hover:text-primary transition-colors">Do
+                            you travel?</span>
+                        <span class="material-icons-outlined text-gray-400 group-hover:text-primary">add</span>
+                    </button>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <button
+                    class="px-8 py-2 border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 rounded-full hover:border-primary hover:text-primary transition-colors text-sm uppercase tracking-wide">Show
+                    More</button>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800"
+        id="contact">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16">
+                <div class="md:w-1/3">
+                    <h4 class="text-sm font-bold uppercase tracking-widest text-gray-800 dark:text-gray-200 mb-6">Why
+                        Book Gold Dust Wedding?</h4>
+                    <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400 mb-10">
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 mr-2"></span><span><strong
+                                    class="text-gray-800 dark:text-gray-300">Co-working</strong> photo &amp; video
+                                team</span></li>
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 mr-2"></span><span><strong
+                                    class="text-gray-800 dark:text-gray-300">Drone</strong> included (weather
+                                permitted)</span></li>
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 mr-2"></span><span><strong
+                                    class="text-gray-800 dark:text-gray-300">Reliable &amp; Friendly</strong>
+                                Experienced Staffs</span></li>
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 mr-2"></span><span><strong
+                                    class="text-gray-800 dark:text-gray-300">4K</strong> film delivery</span></li>
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 mr-2"></span><span><strong
+                                    class="text-gray-800 dark:text-gray-300">Digital photo gallery</strong></span></li>
+                        <li class="flex items-start"><span
+                                class="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 mr-2"></span><span><strong
+                                    class="text-gray-800 dark:text-gray-300">Instalments</strong> available</span></li>
+                    </ul>
+                    <h4 class="text-sm font-bold text-gray-800 dark:text-gray-200 mb-2">Let's tell your story together
+                    </h4>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-4">
+                        <strong class="text-gray-800 dark:text-gray-300">Email :</strong> contact@golddustwedding.co.uk
+                    </p>
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-3xl font-serif font-bold text-gray-900 dark:text-white mb-8">Contact us</h3>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-1 gap-6">
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 uppercase tracking-wide">Your
+                                    Name *</label>
+                                <input
+                                    class="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded shadow-sm focus:border-primary focus:ring-primary"
+                                    type="text" />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 uppercase tracking-wide">Your
+                                    Partner's Name</label>
+                                <input
+                                    class="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded shadow-sm focus:border-primary focus:ring-primary"
+                                    type="text" />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 uppercase tracking-wide">Email
+                                    *</label>
+                                <input
+                                    class="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded shadow-sm focus:border-primary focus:ring-primary"
+                                    type="email" />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 uppercase tracking-wide">Phone
+                                    Number</label>
+                                <input
+                                    class="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded shadow-sm focus:border-primary focus:ring-primary placeholder-gray-400 dark:placeholder-gray-500 text-sm"
+                                    placeholder="Enter your phone number" type="tel" />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 uppercase tracking-wide">What
+                                    service are you interested in?</label>
+                                <select
+                                    class="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded shadow-sm focus:border-primary focus:ring-primary text-sm">
+                                    <option>Photography, Videography or both</option>
+                                    <option>Photography Only</option>
+                                    <option>Videography Only</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 uppercase tracking-wide">Where
+                                    is your wedding?</label>
+                                <input
+                                    class="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded shadow-sm focus:border-primary focus:ring-primary placeholder-gray-400 dark:placeholder-gray-500 text-sm"
+                                    placeholder="Please provide your location if you know" type="text" />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 uppercase tracking-wide">How
+                                    did you hear about us?</label>
+                                <input
+                                    class="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded shadow-sm focus:border-primary focus:ring-primary"
+                                    type="text" />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 uppercase tracking-wide">Tell
+                                    us about you two?</label>
+                                <textarea
+                                    class="w-full border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded shadow-sm focus:border-primary focus:ring-primary text-sm"
+                                    rows="4"></textarea>
+                                <div class="text-right text-xs text-gray-400 mt-1">0/2000</div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                            Our goal is to provide a unique, personalized experience tailored to each couple. We provide
+                            a variety of bespoke wedding collections. By clicking Submit you agree to our Privacy Policy
+                            &amp; Terms and Conditions.
+                        </p>
+                        <button
+                            class="bg-[#C5A065] text-white px-8 py-3 rounded shadow hover:bg-[#b08d55] transition-colors uppercase tracking-widest text-xs font-bold"
+                            type="submit">
+                            Sent
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-800 pt-10 pb-6">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="text-gold font-serif text-2xl font-bold tracking-widest mb-6 md:mb-0">golddust</div>
+                <div
+                    class="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                    <a class="hover:text-primary transition-colors" href="#">Home</a>
+                    <a class="hover:text-primary transition-colors" href="#">About Us</a>
+                    <a class="hover:text-primary transition-colors" href="#">Films</a>
+                    <a class="hover:text-primary transition-colors" href="#">Photo</a>
+                    <a class="hover:text-primary transition-colors" href="#">FAQ</a>
+                    <a class="hover:text-primary transition-colors" href="#">Blog</a>
+                    <a class="hover:text-primary transition-colors" href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-black py-4 px-6">
+            <div
+                class="container mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500">
+                <div class="mb-2 md:mb-0">
+                    <p>© Gold Dust Wedding 2026</p>
+                    <p class="mt-1">Gold Dust wedding is a trading name of NALYN LTD (12103495)</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a class="hover:text-white transition-colors" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="hover:text-white transition-colors" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="hover:text-white transition-colors" href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="hover:text-white transition-colors" href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        href="#">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = themeToggleBtn.querySelector('span');
+        // Check initial theme
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeIcon.textContent = 'light_mode';
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.textContent = 'dark_mode';
+        }
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+                themeIcon.textContent = 'light_mode';
+            } else {
+                localStorage.theme = 'light';
+                themeIcon.textContent = 'dark_mode';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
