@@ -8,10 +8,10 @@ document.querySelectorAll('#faq .space-y-4 button').forEach(button => {
         if (answer.classList.contains('hidden')) {
             icon.textContent = 'add';
             icon.classList.remove('text-primary');
-            icon.classList.add('text-gray-400');
+            icon.classList.add('text-gray-800');
         } else {
             icon.textContent = 'remove';
-            icon.classList.remove('text-gray-400');
+            icon.classList.remove('text-gray-800');
             icon.classList.add('text-primary');
         }
     });
