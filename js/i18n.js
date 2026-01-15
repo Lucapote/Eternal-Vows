@@ -144,8 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             // Cambiar idioma
             currentLang = currentLang === 'en' ? 'es' : 'en';
-
-            console.log(`Estamos en ${currentLang}`);
             
 
             // Actualizar texto de TODOS los botones de idioma
