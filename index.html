@@ -36,7 +36,9 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <script src="tailwind-config.js"></script>
+    <script src="js/tailwind-config.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         @font-face {
             font-family: 'Bubbleboddy';
@@ -101,21 +103,33 @@
                         class="text-sm uppercase tracking-wider text-white group-[.scrolled]:text-gray-800 hover:text-primary group-[.scrolled]:hover:text-primary transition-colors"
                         href="#faq">Preguntas</a></li>
                 <li><a class="px-5 py-2 border border-white text-white group-[.scrolled]:border-primary group-[.scrolled]:text-primary hover:bg-primary hover:border-primary hover:text-white group-[.scrolled]:hover:text-white transition-all duration-300 text-sm uppercase tracking-wider rounded"
-                        href="#contact" data-i18n="nav_contact">Contacto</a></li>
+                        href="https://wa.me/529981545028" target="_blank" data-i18n="nav_contact">Contacto</a></li>
                 <li><button id="lang-toggle"
-                        class="ml-2 px-3 py-1 border border-white text-white group-[.scrolled]:border-gray-600 group-[.scrolled]:text-gray-600 rounded hover:bg-primary hover:border-primary hover:text-white group-[.scrolled]:hover:text-white transition-all duration-300 text-xs font-bold uppercase tracking-widest">EN</button>
+                        class="lang-toggle ml-2 px-3 py-1 border border-white text-white group-[.scrolled]:border-gray-600 group-[.scrolled]:text-gray-600 rounded hover:bg-primary hover:border-primary hover:text-white group-[.scrolled]:hover:text-white transition-all duration-300 text-xs font-bold uppercase tracking-widest">EN</button>
                 </li>
             </ul>
-            <button class="md:hidden text-white group-[.scrolled]:text-gray-800">
+            <button id="mobile-menu-btn" class="md:hidden text-white group-[.scrolled]:text-gray-800 focus:outline-none">
                 <span class="material-icons-outlined">menu</span>
             </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white absolute top-full left-0 w-full shadow-lg border-t border-gray-100 transition-all duration-300">
+            <div class="flex flex-col px-6 py-6 space-y-4">
+                <a data-i18n="nav_home" class="text-gray-800 hover:text-primary text-sm uppercase tracking-wider font-medium" href="#home">Inicio</a>
+                <a data-i18n="nav_about" class="text-gray-800 hover:text-primary text-sm uppercase tracking-wider font-medium" href="#about">Nosotros</a>
+                <a data-i18n="nav_portfolio" class="text-gray-800 hover:text-primary text-sm uppercase tracking-wider font-medium" href="#portfolio">Portafolio</a>
+                <a data-i18n="nav_faq" class="text-gray-800 hover:text-primary text-sm uppercase tracking-wider font-medium" href="#faq">Preguntas</a>
+                <a data-i18n="nav_contact" class="text-gray-800 hover:text-primary text-sm uppercase tracking-wider font-medium" href="#contact">Contacto</a>
+                <button class="lang-toggle text-left text-gray-800 hover:text-primary text-xs font-bold uppercase tracking-widest pt-2 border-t border-gray-100">EN</button>
+            </div>
         </div>
     </nav>
     <main>
         <section class="relative h-screen flex items-center justify-center overflow-hidden" id="home">
             <div class="absolute inset-0 z-0">
-                <img alt="Cinematic wedding couple walking in forest" class="w-full h-full object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6A6bvTeWk_-EKN0gL1eTHffD9OKd-FWEZ5NXu7fib4iyWCfAlY5QlVi7P7dZZUrLDezYrueKP2adg_gVU_MTSFF3SRWc7NlVGwuWDVXBKzPLuK7tkAI03mmqXF41BZYVCtDtyJ7-AyehWu5ZkUgMEU2YTVrbOxpi0CM2iMau309sheTQ8b7pNiUGlajIIDpVPaHcIaQM30DdgjNwfNK7zRPuQk_YUHlma4xpHP-cocEQRaVbys4txyMmLL37S3WmV2nv8gzYJ2HR_" />
+                <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                    <source src="img/loop.mov" type="video/mp4">
+                </video>
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>
             <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto mt-16">
@@ -226,39 +240,17 @@
                 </h3>
                 <div class="grid md:grid-cols-2 gap-12">
                     <div class="group cursor-pointer">
-                        <div class="relative overflow-hidden rounded shadow-lg aspect-video bg-gray-900">
-                            <img alt="Wedding couple ice skating"
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-500"
-                                loading="lazy"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3NWnViUaNznKElvUFfmk51e-snNzZ5SZuowzroeGYjMHHGn3JDLU3aBHfmToH56k7s-r6bZ-uB5Xp0uGkO4hEHdSUyOmsJ8LusripnFRf_v6gOFDIyaJkZ8tVKbiqdZERD9eYASRKn_jnARZUnKPLKIjMERA5S20I5hOhcGCyJQnjM_ik2gAW61KNZPwL2EFAtFYI9XJ1HIztCtHe5FaNNG9LCF7RlkILXmPydgp7q-flg4FEXDneg4QuGynbzylvEP_flDQoBI8d" />
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div
-                                    class="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
-                                    <span class="material-icons-outlined text-white text-3xl ml-1">play_arrow</span>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 data-i18n="card1_title" class="mt-6 font-serif text-2xl text-gray-800">Boda de Edita y Gavin en Chateau de doux</h4>
+                        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1154500898?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Melissa &amp; Mathew"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                        <h4 data-i18n="card1_title" class="mt-6 font-serif text-2xl text-gray-800">Congelando el mejor recuerdo de Melissa & Mathew</h4>
                         <p data-i18n="card1_desc" class="mt-3 text-gray-600 text-sm leading-relaxed">
-                            Gavin le propuso matrimonio a Edita mientras patinaban sobre hielo bajo las luces de Navidad en el Rockefeller Center de Nueva York. Su boda en Francia pareció sacada directamente de una película. Mira el video.
+                            Hay amores que parecen escritos para la gran pantalla. Entre la brisa del Caribe y la elegancia de una atmósfera atemporal, Melissa y Mathew celebraron una unión digna de un cuento de hadas moderno. Un día donde el lujo se encontró con el romance bajo el cielo de la Riviera Maya.  <strong>Dale play y sumérgete en esta película de amor.</strong>
                         </p>
                     </div>
                     <div class="group cursor-pointer">
-                        <div class="relative overflow-hidden rounded shadow-lg aspect-video bg-gray-900">
-                            <img alt="Wedding couple in France"
-                                class="w-full h-full object-cover opacity-80 group-hover:opacity-60 transition-opacity duration-500"
-                                loading="lazy"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9gm5X2rF1xt6aJ4BnX_CgwxGVqCyJDFC4Iyn_6FVJgS5JyllZSKUPwyLmv4pOg0xwVYRK4bw09USwfanMmju0uY6szxydCvJZs66XxkQ-Bghpo1gviAIxGSkaC39SAPqoahIzlVPbcFH1KjfVJEbP8ZuvBfO5LRzavVHHh6Q_N1g7f4YhXdgDaMXFxpaXDhbQi2QX1X-65To0yYQYnGd7KQCzzTuKVkytSp3URbJy9ltqS0cYRX-n1GaC1yAM1cbUADPRh2e1YOZ-" />
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div
-                                    class="w-16 h-16 rounded-full border-2 border-white flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors duration-300">
-                                    <span class="material-icons-outlined text-white text-3xl ml-1">play_arrow</span>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 data-i18n="card2_title" class="mt-6 font-serif text-2xl text-gray-800">Boda de Aubree y Anthony en Pesmes, Francia</h4>
+                        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1154447721?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Kendall &amp; Timoty"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                        <h4 data-i18n="card2_title" class="mt-6 font-serif text-2xl text-gray-800">La unión de Kendall & Timoty en la Rivera Maya</h4>
                         <p data-i18n="card2_desc" class="mt-3 text-gray-600 text-sm leading-relaxed">
-                            Aubree y Anthony viajaron desde EE. UU. a Pesmes, Francia, para intercambiar votos. Su boda es cruda, honesta, divertida y profundamente conmovedora: una celebración inolvidable del amor. Mira cómo se desarrolla su historia.
+                            Auténtica, divertida y profundamente conmovedora. La boda de Kendall y Timoty en la Riviera Maya fue una explosión de honestidad y alegría pura. Desde los votos más íntimos hasta una celebración que desbordó energía, mira cómo se desarrolla esta historia donde el amor real es el único protagonista. <strong>No te pierdas este viaje emocional.</strong>
                         </p>
                     </div>
                 </div>
@@ -278,28 +270,22 @@
                             <div class="slide absolute inset-0 transition-opacity duration-700 opacity-100 z-10">
                                 <img alt="Bride and groom black and white walking" class="w-full h-full object-cover"
                                     loading="lazy"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgDGX_LDiVFk2CvKyBrnLz-QDkVoPSR9JUfjt4czAa296lxzNhvJaeBU7ucH0Yt7VhZraf8kKQOICtA0rxX3YkVDaMXZp75Q8tUbbed6qwX2eW--wdPH_f_zYZVs-u-odpggiJ5YIPaT5f3ORtuWx4OpyAZzNvvqYIhUdJUeHzJyNxDh4NpDMf96MoDXRy0Cga6QWlZoD5G40ZLXpGU7JryjMgYZFl2mIjp315yebA0jmJYFufNWxZdNBrvpuaCguSi3HTZktGdjDV" />
-                                <div class="absolute bottom-6 left-6 text-white z-10">
-                                    <div
-                                        class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-2 hover:bg-primary cursor-pointer transition-colors">
-                                        <span class="material-icons-outlined">play_arrow</span>
-                                    </div>
-                                </div>
+                                    src="img/h1.webp" />
                             </div>
                             <!-- Slide 2 -->
                             <div class="slide absolute inset-0 transition-opacity duration-700 opacity-0 z-0">
                                 <img alt="Wedding couple ice skating" class="w-full h-full object-cover" loading="lazy"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3NWnViUaNznKElvUFfmk51e-snNzZ5SZuowzroeGYjMHHGn3JDLU3aBHfmToH56k7s-r6bZ-uB5Xp0uGkO4hEHdSUyOmsJ8LusripnFRf_v6gOFDIyaJkZ8tVKbiqdZERD9eYASRKn_jnARZUnKPLKIjMERA5S20I5hOhcGCyJQnjM_ik2gAW61KNZPwL2EFAtFYI9XJ1HIztCtHe5FaNNG9LCF7RlkILXmPydgp7q-flg4FEXDneg4QuGynbzylvEP_flDQoBI8d" />
+                                    src="img/h2.webp" />
                             </div>
                             <!-- Slide 3 -->
                             <div class="slide absolute inset-0 transition-opacity duration-700 opacity-0 z-0">
                                 <img alt="Wedding couple in France" class="w-full h-full object-cover" loading="lazy"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9gm5X2rF1xt6aJ4BnX_CgwxGVqCyJDFC4Iyn_6FVJgS5JyllZSKUPwyLmv4pOg0xwVYRK4bw09USwfanMmju0uY6szxydCvJZs66XxkQ-Bghpo1gviAIxGSkaC39SAPqoahIzlVPbcFH1KjfVJEbP8ZuvBfO5LRzavVHHh6Q_N1g7f4YhXdgDaMXFxpaXDhbQi2QX1X-65To0yYQYnGd7KQCzzTuKVkytSp3URbJy9ltqS0cYRX-n1GaC1yAM1cbUADPRh2e1YOZ-" />
+                                    src="img/h3.webp" />
                             </div>
                             <!-- Slide 4 -->
                             <div class="slide absolute inset-0 transition-opacity duration-700 opacity-0 z-0">
                                 <img alt="Cinematic wedding couple" class="w-full h-full object-cover" loading="lazy"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6A6bvTeWk_-EKN0gL1eTHffD9OKd-FWEZ5NXu7fib4iyWCfAlY5QlVi7P7dZZUrLDezYrueKP2adg_gVU_MTSFF3SRWc7NlVGwuWDVXBKzPLuK7tkAI03mmqXF41BZYVCtDtyJ7-AyehWu5ZkUgMEU2YTVrbOxpi0CM2iMau309sheTQ8b7pNiUGlajIIDpVPaHcIaQM30DdgjNwfNK7zRPuQk_YUHlma4xpHP-cocEQRaVbys4txyMmLL37S3WmV2nv8gzYJ2HR_" />
+                                    src="img/h4.webp" />
                             </div>
                         </div>
                     </div>
@@ -323,7 +309,7 @@
                         <img alt="Couple walking"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             loading="lazy"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpM3Y186Q2tczcXRm9M7okY1m0I8cderwtI_KTUpNTnvn4WmdRXLinQOA_LTs0rF87vnPF7hQot-BZynuiM_XXln7Zu9yJxWvoGtt0dFKWgmpv1Yyhv9meZsXT-S6MKlgeymV5I67JobEnnMMUm1laFLsU5l1OLnWSAGYiYA7y-0G5QiGwmp2-k_J5aQvHw0ghkGFQuRLhA-K0dqpQclNbH15Kqm_geHrVYCVSI6kyu6GzoPMfhLn3QeF4seSxGcTxdPZ9TfjFzqsp" />
+                            src="img/v1.webp" />
                         <div
                             class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
@@ -332,7 +318,7 @@
                         <img alt="Couple dancing with fireworks"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             loading="lazy"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKHbgEfv-spx78eaIUhramdWPkG1KOaKgWh_2IicTr5as78KHbPv2UU2ACQ_LXz7PjGGxTtjTOAmgSxpiAUqOIryBtIRo-MWqXbvPejjcE1D-nEe441usFDXBdlI6Jqx0kJg1yCVDq5T87xrVnlDfBKpTPMNs1XMdFAnXVOIikHJxysgZWGjaN0OjST0IVoXAZUWa2yi9gJuGa03ZQSrfBzrC96l9xv_aXCcro6g03OgG5ZSbYwVBhOdrMdG0e6LzqC0J1l6JVtVDp" />
+                            src="img/v3.webp" />
                         <div
                             class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
@@ -341,7 +327,7 @@
                         <img alt="Couple celebrating in field"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             loading="lazy"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyu8esxLuzJCw9vhYgqn_N2jaA7zgAbT7PWVzcahYyspKXv_URibKmhNVVhKqK5F4y6zyuLAOZ7B37t-w8ApgK5cFnSFc2He9sOb0GHSQcxn_B2AazR40RzVRs-N9MkFwRkYuc-5amaIqAL8bMr_pYXySWOSD8c-rsf4x3fGY0AlqaV9WM9dU_3c7rJd4QrXPJq-GU4n7d_DpW00AUSesutBD5FEh8QmJnEWRbVjDp9jurMYc_YdJQd8Tasc2dzHJEv14vlXFUZjS1" />
+                            src="img/v2.webp" />
                         <div
                             class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
@@ -350,7 +336,7 @@
                         <img alt="Couple in historic room"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             loading="lazy"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgsr2i0tGw4uZeQRWbXXS7_4t6BoEWxLaxgcSr4cmxXz-ZQMO2AbNPAf5lYq-x9lgsgI16dqJnZ21vF4H-voKuYDMNhBeBgd3s_rOFXtOW3TRaoaNEMkQsLLdeaqiso-9qpVl98Cw_JgcF4ZnKfOXekEzdhy2IWbtCEv0wUj47WuGdei49qibld-QbLngMJTgaaTIjpPqrV-p-U_0EzkYMrKO13m9fHPT9-LBAwDjVnWqcn9nZ2h9mYFVSq1_vOZ8klDw4N00eBRYK" />
+                            src="img/v4.webp" />
                         <div
                             class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         </div>
@@ -500,43 +486,64 @@
                         <h3 data-i18n="contact_form_title"
                             class="text-3xl text-primary font-saphira font-bold mb-8">
                             Contáctenos</h3>
-                        <form class="space-y-6">
+                        <form id="contact-form" class="space-y-6">
                             <div class="grid md:grid-cols-1 gap-6">
                                 <div>
                                     <label data-i18n="label_name"
                                         class="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">Tu Nombre *</label>
                                     <input
+                                        name="user_name"
+                                        required
+                                        data-i18n-placeholder="placeholder_name"
                                         class="w-full border-gray-300 bg-white text-gray-900 rounded shadow-sm focus:border-primary focus:ring-primary"
-                                        type="text" />
+                                        placeholder="Ingresa tu nombre" type="text" />
                                 </div>
                                 <div>
                                     <label data-i18n="label_partner"
                                         class="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">Nombre de tu Pareja</label>
                                     <input
+                                        name="partner_name"
+                                        data-i18n-placeholder="placeholder_partner"
                                         class="w-full border-gray-300 bg-white text-gray-900 rounded shadow-sm focus:border-primary focus:ring-primary"
-                                        type="text" />
+                                        placeholder="Ingresa el nombre de tu pareja" type="text" />
                                 </div>
                                 <div>
                                     <label data-i18n="label_email"
                                         class="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">Correo Electrónico *</label>
                                     <input
+                                        name="user_email"
+                                        required
+                                        data-i18n-placeholder="placeholder_email"
                                         class="w-full border-gray-300 bg-white text-gray-900 rounded shadow-sm focus:border-primary focus:ring-primary"
-                                        type="email" />
+                                        placeholder="Ingresa tu correo electrónico" type="email" />
+                                </div>
+                                <div>
+                                    <label data-i18n="label_phone"
+                                        class="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">Número de Teléfono *</label>
+                                    <input
+                                        name="user_phone"
+                                        required
+                                        data-i18n-placeholder="placeholder_phone"
+                                        class="w-full border-gray-300 bg-white text-gray-900 rounded shadow-sm focus:border-primary focus:ring-primary placeholder-gray-400 text-sm"
+                                        placeholder="Ingresa tu número de teléfono" type="tel" />
                                 </div>
                                 <div>
                                     <label data-i18n="label_date"
                                         class="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">¿Cuándo es tu boda?</label>
                                     <input
+                                        name="wedding_date"
+                                        data-i18n-placeholder="placeholder_date"
                                         class="w-full border-gray-300 bg-white text-gray-900 rounded shadow-sm focus:border-primary focus:ring-primary placeholder-gray-400 text-sm"
-                                        type="date" />
+                                        placeholder="Selecciona la fecha" type="date" />
                                 </div>
                                 <div>
                                     <label data-i18n="label_tell"
                                         class="block text-xs font-bold text-gray-700 mb-1 uppercase tracking-wide">¿Qué es aquello que nunca querrían olvidar de su boda?</label>
                                     <textarea
+                                        name="message"
+                                        data-i18n-placeholder="placeholder_tell"
                                         class="w-full border-gray-300 bg-white text-gray-900 rounded shadow-sm focus:border-primary focus:ring-primary text-sm"
-                                        rows="4"></textarea>
-                                    <div class="text-right text-xs text-gray-400 mt-1">0/2000</div>
+                                        placeholder="Cuéntanos su historia..." rows="4"></textarea>
                                 </div>
                             </div>
                             <button data-i18n="btn_sent"
@@ -548,7 +555,7 @@
 
                         <div class="mt-12 pt-8 border-t border-gray-200">
                             <p data-i18n="whatsapp_prompt" class="text-gray-600 mb-4 font-medium">¿Prefieren una respuesta inmediata?</p>
-                            <a href="https://wa.me/tunumero" target="_blank"
+                            <a href="https://wa.me/529981545028" target="_blank"
                                 class="inline-flex items-center justify-center bg-[#25D366] hover:bg-[#20bd5a] text-white px-8 py-3 rounded shadow transition-colors duration-300 uppercase tracking-widest text-xs font-bold">
                                 <i class="fab fa-whatsapp text-lg mr-2"></i> <span data-i18n="whatsapp_btn">Contactar por WhatsApp</span>
                             </a>
@@ -589,14 +596,15 @@
         </div>
     </footer>
     <a class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-        href="#">
+        href="https://wa.me/529981545028" target="_blank">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <script src="navbar.js"></script>
-    <script src="faq.js"></script>
-    <script src="i18n.js"></script>
-    <script src="carousel.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/faq.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/email-service.js"></script>
 </body>
 
 </html>
