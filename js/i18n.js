@@ -77,7 +77,7 @@ const translations = {
         hero_desc: "Fotografía y Cinematografía de alta gama para quienes entienden que el valor de una historia no está en capturarla, sino en saber preservarla. Exclusividad, innovación y presencia absoluta",
         hero_btn: "Descubre la experiencia",
         about_title: "No solo capturamos lo que sucede,<br> protegemos lo que significa",
-        about_desc: "En <strong class=\"text-primary font-semibold\">Eternal Vows</strong>, entendemos que una boda no es solo un evento social,<strong class=\"text-primary font-semibold\">es una promesa.</strong>Nuestra misión es <strong class=\"text-primary font-semibold\">documentar lo invisible</strong>: el silencio antes del 'sí', la reverencia del compromiso y la verdad en cada mirada. <br>Estamos aquí para asegurar que </strong>Nuestra misión es <strong class=\"text-primary font-semibold\">las promesas de hoy sean el tesoro de tus próximas generaciones.</strong>",
+        about_desc: "En <strong class=\"text-primary font-semibold\">Eternal Vows</strong>, entendemos que una boda no es solo un evento social,<strong class=\"text-primary font-semibold\">es una promesa.</strong>Nuestra misión es <strong class=\"text-primary font-semibold\">documentar lo invisible</strong>: el silencio antes del 'sí', la reverencia del compromiso y la verdad en cada mirada. <br>Estamos aquí para asegurar que <strong class=\"text-primary font-semibold\">las promesas de hoy sean el tesoro de tus próximas generaciones.</strong>",
         services_specialty: "Nuestra Especialidad",
         services_title_1: "Selección Editorial",
         services_subtitle_1: "Cinematografía & Fotografía de Autor",
@@ -136,33 +136,35 @@ const translations = {
     }
 };
 
-let currentLang = 'es';
-const langToggles = document.querySelectorAll('.lang-toggle');
+document.addEventListener('DOMContentLoaded', () => {
+    let currentLang = 'es';
+    const langToggles = document.querySelectorAll('.lang-toggle');
 
-langToggles.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Cambiar idioma
-        currentLang = currentLang === 'en' ? 'es' : 'en';
+    langToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Cambiar idioma
+            currentLang = currentLang === 'en' ? 'es' : 'en';
 
-        console.log(`Estamos en ${currentLang}`);
-        
+            console.log(`Estamos en ${currentLang}`);
+            
 
-        // Actualizar texto de TODOS los botones de idioma
-        langToggles.forEach(b => b.textContent = currentLang === 'en' ? 'ES' : 'EN');
+            // Actualizar texto de TODOS los botones de idioma
+            langToggles.forEach(b => b.textContent = currentLang === 'en' ? 'ES' : 'EN');
 
-        // Actualizar textos de la página
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (translations[currentLang][key]) {
-                el.innerHTML = translations[currentLang][key];
-            }
-        });
-        // Actualizar placeholders
-        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-            const key = el.getAttribute('data-i18n-placeholder');
-            if (translations[currentLang][key]) {
-                el.setAttribute('placeholder', translations[currentLang][key]);
-            }
+            // Actualizar textos de la página
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+            // Actualizar placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[currentLang][key]) {
+                    el.setAttribute('placeholder', translations[currentLang][key]);
+                }
+            });
         });
     });
 });
