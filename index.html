@@ -127,7 +127,7 @@
     <main>
         <section class="relative h-screen flex items-center justify-center overflow-hidden" id="home">
             <div class="absolute inset-0 z-0">
-                <video class="w-full h-full object-cover" autoplay muted loop playsinline>
+                <video id="hero-video" class="w-full h-full object-cover" autoplay muted loop playsinline webkit-playsinline>
                     <source src="img/loop.mp4" type="video/mp4">
                 </video>
                 <div class="absolute inset-0 bg-black/10"></div>
@@ -603,6 +603,15 @@
     <script src="js/i18n.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/email-service.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('hero-video');
+            if (video) {
+                video.muted = true;
+                video.play().catch(function(e) { console.log("Autoplay prevented"); });
+            }
+        });
+    </script>
 </body>
 
 </html>
